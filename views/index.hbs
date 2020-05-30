@@ -1,0 +1,31 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+<br>
+
+{{!-- <form action="/" method="POST">
+  <div>
+    <label for="say">What anagrams want to see?</label>
+    <input name="theAnagram" id="say" value="">
+  </div>
+  <div>
+    <button type="submit">Get anagrams</button>
+  </div>
+</form> --}}
+
+<form action="/" method="POST">
+  <div>
+    <input name='xcoordinate' type="text" id="xcoordinate" placeholder="координата x" required>
+    <input name='ycoordinate' type="text" id="ycoordinate" placeholder="координата y" required>
+    <input name='title' type="text" id="title" placeholder="название объекта">
+  </div>
+  <div>
+    <button type="submit">Создать объект</button>
+  </div>
+</form>
+
+<div style="display: none;">{{coordArray}}</div>
+{{!-- <button id="creatingMarker">
+  создать маркер
+</button> --}}
+
+<div id="map" style="width:500px; height:400px"></div>
