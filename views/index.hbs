@@ -23,9 +23,20 @@
   </div>
 </form>
 
-<div style="display: none;">{{coordArray}}</div>
 {{!-- <button id="creatingMarker">
   создать маркер
 </button> --}}
 
 <div id="map" style="width:500px; height:400px"></div>
+
+
+
+ <ul class="coords">
+    {{#each allData}}
+    <li class="theLi">
+      <a>{{this.name}}</a>
+      <span>{{this.firstCoordinate}}</span>
+      {{!-- <p class="entry-stub">{{body}}</p> --}}
+    </li>
+    {{/each}}s
+  </ul>
