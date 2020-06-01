@@ -1,18 +1,20 @@
-<h2>{{entry.name}}</h2>
+<main class="main" style="color: white;">
+  <h2>Название объекта: {{entry.name}}</h2>
 
-<p>Координаты: {{entry.firstCoord}}</p>
+  <p>Широта: {{entry.firstCoord}}</p>
 
-<p>{{entry.secondCoord}}</p>
+  <p>Долгота: {{entry.secondCoord}}</p>
 
-<ul>
-  <li>
-    <a href="/{{entry.id}}/edit">Edit</a>
-  </li>
+  <ul class="no-bullets no-margin no-padding right">
+    <li>
+      <a href="/{{entry.id}}/edit"><button class="button">Edit</button> </a>
+    </li>
 
-  <li>
-    <form method="post" action="/{{entry.id}}">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Delete">
-    </form>
-  </li>
-</ul>
+    <li style="margin: 5px 0;">
+      <form action="/{{entry.id}}" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete">
+      </form>
+    </li>
+  </ul>
+</main>

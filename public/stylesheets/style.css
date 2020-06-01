@@ -1,8 +1,66 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  background-color: #282c34;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
 }
 
 a {
   color: #00B7FF;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-panel {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* form {} */
+
+.input {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+input,
+textarea,
+select,
+option {
+  background: none !important;
+  border-top: #FFCC33 1px solid !important;
+  border-left: #FFCC33 1px solid !important;
+  border-bottom: #FFCC33 3px solid !important;
+  border-right: #FFCC33 3px solid !important;
+  border-radius: 2px !important;
+  color: #FFCC33 !important;
+}
+
+.map {
+  margin-top: 10px;
+  background: none !important;
+  border-top: #FFCC33 1px solid !important;
+  border-left: #FFCC33 1px solid !important;
+  border-bottom: #FFCC33 3px solid !important;
+  border-right: #FFCC33 3px solid !important;
+  border-radius: 2px !important;
+  color: #FFCC33 !important;
+}
+
+.button {
+  background: none !important;
+  border-top: #FFCC33 1px solid !important;
+  border-left: #FFCC33 1px solid !important;
+  border-bottom: #FFCC33 3px solid !important;
+  border-right: #FFCC33 3px solid !important;
+  border-radius: 2px !important;
+  color: #FFCC33 !important;
 }

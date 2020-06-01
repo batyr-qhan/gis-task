@@ -26,7 +26,6 @@ router.post('/', (req, res, next) => {
   marker
     .save()
     .then((item) => {
-      // alert('item saved to database');
       res.redirect('/');
     })
     .catch((err) => {
@@ -43,24 +42,6 @@ router.get('/:id', async (req, res) => {
   });
   res.render('entry', { entry: allData });
 });
-
-// форма для редактирования
-
-router.get('/:id/edit', async (req, res) => {
-  const { id } = req.params;
-
-  const allData = await Marker.findById(id, (err, doc) => {
-    if (err) return console.log(err);
-    console.log(doc);
-  });
-  res.render('edit', { entry: allData });
-});
-
-// обновляем маркер
-
-// router.post('/:id', (req, res) => {
-//   res.redirect(`/${req.params.id}`);
-// });
 
 router.put('/:id', async (req, res) => {
   const { id } = req.params;
@@ -79,35 +60,28 @@ router.put('/:id', async (req, res) => {
       console.log(doc);
     },
   );
-
-  res.redirect(`/${id}`);
+  res.redirect('/');
 });
 
-// router.put("/:id", async function(req, res, next) {
-//   let entry = await Entry.findById(req.params.id);
-
-//   entry.title = req.body.title;
-//   entry.body = req.body.body;
-//   await entry.save();
-
-//   res.redirect(`/entries/${entry.id}`);
-// });
-
 router.delete('/:id', async (req, res) => {
-  await Marker.deleteOne({ _id: req.params.id }, (err, result) => {
+  const { id } = req.params;
+
+  await Marker.deleteOne({ _id: id }, (err, result) => {
     if (err) return console.log(err);
     res.redirect('/');
   });
 });
 
-// router.delete('/:id', async (req, res) => {
-//   const { id } = req.params;
-//   // await Marker.deleteOne({ _id })
+// форма для редактирования
 
-//   await Marker.findOneAndDelete({ _id: id }, (err, result) => {
-//     if (err) return console.log(err);
-//     res.send(result);
-//   });
-// });
+router.get('/:id/edit', async (req, res) => {
+  const { id } = req.params;
+
+  const allData = await Marker.findById(id, (err, doc) => {
+    if (err) return console.log(err);
+    console.log(doc);
+  });
+  res.render('edit', { entry: allData });
+});
 
 module.exports = router;

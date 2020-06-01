@@ -1,16 +1,13 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<br>
+<main class="main">
 
-<form action="/" method="POST">
   <div>
-    <input name='xcoordinate' type="text" id="xcoordinate" placeholder="координата x" required>
-    <input name='ycoordinate' type="text" id="ycoordinate" placeholder="координата y" required>
-    <input name='title' type="text" id="title" placeholder="название объекта">
+    <form action="/" method="POST" class="form-panel">
+      <input name='xcoordinate' type="text" class="input" placeholder="координата x (центр 51.16)" required>
+      <input name='ycoordinate' type="text" class="input" placeholder="координата y (центр 71.47)" required>
+      <input name='title' type="text" class="input" placeholder="название объекта" required>
+      <button type="submit" class="button">создать объект</button>
+    </form>
   </div>
-  <div>
-    <button type="submit">Создать объект</button>
-  </div>
-</form>
 
-<div id="map" style="width:500px; height:400px"></div>
+  <div id="map" style="width:500px; height:400px" class="map"></div>
+</main>

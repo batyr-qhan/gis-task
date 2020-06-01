@@ -30,7 +30,7 @@ DG.then(() => {
 
       marker.bindPopup(
         // eslint-disable-next-line no-underscore-dangle
-        `<div><p>${element.name}</p></div> <br> <div><a href="${element._id}"><p>Детали</p></a> </div>`,
+        `<div style='color: #FFCC33'><p>${element.name}</p></div> <br> <div><a href="${element._id}"><p style='color: white'>подробнее</p></a> </div>`,
       );
 
       // marker.on('click', () => {
