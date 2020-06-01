@@ -5,17 +5,19 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-require('dotenv').config({ path: 'ENV_FILENAME' });
 
 const indexRouter = require('./routes/index');
 const entriesRouter = require('./routes/entries');
 
 const app = express();
 
-mongoose.connect(process.env.GIS_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  'mongodb+srv://tenderUser:<password>@gis-cluster-kuoil.mongodb.net/test?retryWrites=true&w=majority',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
