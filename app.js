@@ -5,9 +5,6 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-const dotenv = require('dotenv');
-
-dotenv.config();
 
 const indexRouter = require('./routes/index');
 const entriesRouter = require('./routes/entries');
@@ -15,7 +12,7 @@ const entriesRouter = require('./routes/entries');
 const app = express();
 
 mongoose.connect(
-  'mongodb+srv://tenderUser:<password>@gis-cluster-kuoil.mongodb.net/test?retryWrites=true&w=majority',
+  'mongodb+srv://tenderUser:b.-6EEHk!7obdBxTshEP@gis-cluster-kuoil.mongodb.net/test?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
