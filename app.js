@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+require('dotenv').config({ path: 'ENV_FILENAME' });
 
 const indexRouter = require('./routes/index');
 const entriesRouter = require('./routes/entries');

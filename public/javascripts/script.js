@@ -24,9 +24,6 @@ DG.then(() => {
         map,
       );
       console.log(element);
-      //   marker.bindPopup(`<div><p>${element.name}</p></div> <br> <div><a href="${element._id}"><p>edit</p></a> <br> <form method="POST" action="/${element._id}">
-      // <input type="submit" value="delete"></form></div>
-      // `);
 
       marker.bindPopup(
         // eslint-disable-next-line no-underscore-dangle
