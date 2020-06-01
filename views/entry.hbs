@@ -1,13 +1,18 @@
-<h2>Edit the entry</h2>
+<h2>{{entry.name}}</h2>
 
-<form method="POST" action="/{{entry.id}}">
+<p>Координаты: {{entry.firstCoord}}</p>
 
-    <input id="xcoordinate" name="xcoordinate" type="text" value="{{entry.name}}">
+<p>{{entry.secondCoord}}</p>
 
-    <input id="ycoordinate" name="ycoordinate" value="{{entry.firstCoord}}">
+<ul>
+  <li>
+    <a href="/{{entry.id}}/edit">Edit</a>
+  </li>
 
-    <input id="name" name="name" value="{{entry.secondCoord}}">
-
-    <input type="submit" value="Update">
-
-</form>
+  <li>
+    <form method="post" action="/{{entry.id}}">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete">
+    </form>
+  </li>
+</ul>

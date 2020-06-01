@@ -1,15 +1,10 @@
-let url = 'http://localhost:3000/data'
+const url = 'http://localhost:3000/data';
 
 const fetchingData = async (address) => {
-  let response = await fetch(address);
-
-  let commits = await response.json(); // читаем ответ в формате JSON
-
-  console.log(commits)
-
+  const response = await fetch(address);
+  const commits = await response.json(); // читаем ответ в формате JSON
   return commits;
-
-}
+};
 
 let map;
 
@@ -19,17 +14,28 @@ DG.then(() => {
     zoom: 11,
   });
 
-  let newArr = fetchingData(url)
+  const newArr = fetchingData(url);
 
-  newArr.then((item) => item.forEach(element => {
-    let marker = DG.marker([element.firstCoord, element.secondCoord]).addTo(map);
+  console.log(newArr);
 
-    marker.bindPopup(`<p>${element.name}</p> <br> <a href="${element._id}"><p>edit</p></a> <br> <form method="POST" action="/${element._id}">
-    <input type="submit" value="delete"></form>
-    `);
+  newArr.then((item) =>
+    item.forEach((element) => {
+      const marker = DG.marker([element.firstCoord, element.secondCoord]).addTo(
+        map,
+      );
+      console.log(element);
+      //   marker.bindPopup(`<div><p>${element.name}</p></div> <br> <div><a href="${element._id}"><p>edit</p></a> <br> <form method="POST" action="/${element._id}">
+      // <input type="submit" value="delete"></form></div>
+      // `);
 
-    marker.on('click', () => {
-      console.log(element._id)
-    })
-  }))
+      marker.bindPopup(
+        // eslint-disable-next-line no-underscore-dangle
+        `<div><p>${element.name}</p></div> <br> <div><a href="${element._id}"><p>Детали</p></a> </div>`,
+      );
+
+      // marker.on('click', () => {
+      //   console.log(element._id);
+      // });
+    }),
+  );
 });

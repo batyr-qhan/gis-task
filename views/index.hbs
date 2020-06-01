@@ -2,16 +2,6 @@
 <p>Welcome to {{title}}</p>
 <br>
 
-{{!-- <form action="/" method="POST">
-  <div>
-    <label for="say">What anagrams want to see?</label>
-    <input name="theAnagram" id="say" value="">
-  </div>
-  <div>
-    <button type="submit">Get anagrams</button>
-  </div>
-</form> --}}
-
 <form action="/" method="POST">
   <div>
     <input name='xcoordinate' type="text" id="xcoordinate" placeholder="координата x" required>
@@ -23,20 +13,4 @@
   </div>
 </form>
 
-{{!-- <button id="creatingMarker">
-  создать маркер
-</button> --}}
-
 <div id="map" style="width:500px; height:400px"></div>
-
-
-
- <ul class="coords">
-    {{#each allData}}
-    <li class="theLi">
-      <a>{{this.name}}</a>
-      <span>{{this.firstCoordinate}}</span>
-      {{!-- <p class="entry-stub">{{body}}</p> --}}
-    </li>
-    {{/each}}s
-  </ul>
