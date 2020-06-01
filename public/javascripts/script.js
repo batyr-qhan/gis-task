@@ -1,4 +1,4 @@
-const url = 'http://localhost:3000/data';
+const url = 'https://gis-astana.herokuapp.com/data';
 
 const fetchingData = async (address) => {
   const response = await fetch(address);
